@@ -3,16 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Days Lived Calculator</title>
+    <title>Days Lived Calculator by Halip26</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Calculate the exact number of days you've been alive. Discover your life duration in days with our easy-to-use calculator."
+    />
+    <meta
+      name="keywords"
+      content="life calculator, days lived, birthday calculator, age calculator, time calculator"
+    />
+    <meta name="author" content="Your Company Name" />
+    <meta property="og:title" content="Days Lived Calculator by Halip26" />
+    <meta
+      property="og:description"
+      content="Discover how many days you've been alive with this website made by Halip26"
+    />
+    <meta
+      property="og:image"
+      content="https://halip26.github.io/days-lived/assets/preview.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
+
+    <!-- Style css -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Days Lived Calculator</h1>
+      <h1>
+        Days Lived Calculator by
+        <a target="_blank " href="https://halip26.github.io/">Halip26</a>
+      </h1>
       <div class="input-container">
         <div class="input-group">
           <label for="name">Enter your name:</label>
-          <input type="text" id="name" placeholder="Your name" />
+          <input
+            type="text"
+            id="name"
+            placeholder="Enter your name first yaa"
+            required
+          />
         </div>
 
         <div class="input-group">
@@ -24,6 +57,7 @@
               placeholder="Day (1-31)"
               min="1"
               max="31"
+              required
             />
             <input
               type="number"
@@ -31,6 +65,7 @@
               placeholder="Month (1-12)"
               min="1"
               max="12"
+              required
             />
             <input
               type="number"
@@ -38,6 +73,7 @@
               placeholder="Year (e.g., 1990)"
               min="1900"
               max="2099"
+              required
             />
           </div>
         </div>
