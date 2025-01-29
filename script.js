@@ -41,7 +41,10 @@ function formatDate(dateObj) {
   });
 }
 
-function calculate() {
+function calculate(event) {
+  // add event handling and basic input validation
+  event.preventDefault();
+  const form = document.getElementById("dateForm");
   const name = document.getElementById("name").value.trim();
   const resultContainer = document.querySelector(".result-container");
 
