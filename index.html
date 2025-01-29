@@ -35,51 +35,61 @@
     <div class="container">
       <h1>
         Days Lived Calculator by
-        <a target="_blank " href="https://halip26.github.io/">Halip26</a>
+        <a target="_blank" href="https://halip26.github.io/">Halip26</a>
       </h1>
-      <div class="input-container">
-        <div class="input-group">
-          <label for="name">Enter your name:</label>
-          <input
-            type="text"
-            id="name"
-            placeholder="Enter your name first yaa"
-            required
-          />
-        </div>
 
-        <div class="input-group">
-          <label>Birth Date:</label>
-          <div class="d-flex">
+      <form id="dateForm" onsubmit="calculate(event)">
+        <div class="input-container">
+          <div class="input-group">
+            <label for="name">Enter your name here:</label>
             <input
-              type="number"
-              id="day"
-              placeholder="Day (1-31)"
-              min="1"
-              max="31"
-              required
-            />
-            <input
-              type="number"
-              id="month"
-              placeholder="Month (1-12)"
-              min="1"
-              max="12"
-              required
-            />
-            <input
-              type="number"
-              id="year"
-              placeholder="Year (e.g., 1990)"
-              min="1900"
-              max="2099"
+              type="text"
+              id="name"
+              aria-labelledby="name-label"
+              placeholder="Enter your name first yaa"
               required
             />
           </div>
-        </div>
 
-        <button onclick="calculate()">Calculate</button>
-      </div>
+          <div class="input-group">
+            <label>Your Birth Date here:</label>
+            <div class="d-flex">
+              <input
+                type="number"
+                id="day"
+                aria-labelledby="birthdate-label"
+                aria-label="Day of birth (1-31)"
+                placeholder="Day (1-31)"
+                min="1"
+                max="31"
+                required
+              />
+              <input
+                type="number"
+                id="month"
+                aria-labelledby="birthdate-label"
+                aria-label="Month of birth (1-12)"
+                placeholder="Month (1-12)"
+                min="1"
+                max="12"
+                required
+              />
+              <input
+                type="number"
+                id="year"
+                aria-labelledby="birthdate-label"
+                aria-label="Year of birth (1900-2099)"
+                placeholder="Year (e.g., 1990)"
+                min="1900"
+                max="2099"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit">Calculate</button>
+        </div>
+      </form>
 
       <div class="result-container"></div>
     </div>
