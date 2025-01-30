@@ -21,10 +21,30 @@ function saveInputs() {
 
 function getBirthDate() {
   const day = parseInt(document.getElementById("day").value);
-  const month = parseInt(document.getElementById("month").value) - 1;
+  const month = parseInt(document.getElementById("month").value) - 1; // Months are 0-based
   const year = parseInt(document.getElementById("year").value);
 
-  return new Date(year, month, day);
+  const date = new Date(year, month, day);
+  const today = new Date();
+
+  // Reset time components to midnight for accurate comparison
+  today.setHours(0, 0, 0, 0);
+
+  // Check if the date is valid
+  if (
+    date.getDate() !== day ||
+    date.getMonth() !== month ||
+    date.getFullYear() !== year
+  ) {
+    throw new Error("Invalid date");
+  }
+
+  // Check if date is in the future
+  if (date > today) {
+    throw new Error("Birth date cannot be in the future");
+  }
+
+  return date;
 }
 
 function calculateDays(birthDate) {
@@ -86,9 +106,11 @@ function calculate(event) {
     }, 50);
   } catch (error) {
     resultContainer.innerHTML = `
-                    <div style="color: red; margin-top: 20px; text-align: center">
-                        Error: Please enter a valid date!
-                    </div>
-                `;
+      <div class="error-message">
+        ${error.message === "Invalid date" 
+          ? "Error: Please enter a valid date!" 
+          : "Error: Birth date cannot be in the future!"}
+      </div>
+    `;
   }
 }
