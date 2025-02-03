@@ -87,7 +87,8 @@ function calculate(event) {
                     <span>is the date you were born </span>
                     <span class="name-part">${name}</span>
                     <span>and you have been living</span>
-                    <span class="days-part">${daysPassed} days 🥳</span>
+                    <span class="days-part">${daysPassed} days</span>
+                    <span>on earth 🌏🥳</span>
                 `;
 
     // Add animation
@@ -107,9 +108,11 @@ function calculate(event) {
   } catch (error) {
     resultContainer.innerHTML = `
       <div class="error-message">
-        ${error.message === "Invalid date" 
-          ? "Error: Please enter a valid date!" 
-          : "Error: Birth date cannot be in the future!"}
+        ${
+          error.message === "Invalid date"
+            ? "Error: Please enter a valid date!"
+            : "Error: Birth date cannot be in the future!"
+        }
       </div>
     `;
   }
